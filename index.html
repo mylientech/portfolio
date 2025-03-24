@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Lien - Business Analyst Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts - Serif font for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Merriweather', 'serif'],
+          },
+          colors: {
+            primary: '#0D47A1',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-serif {
+      font-family: 'Merriweather', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="text-xl font-serif font-bold text-[#0D47A1] dark:text-white">
+          My Lien
+        </a>
+        <div class="hidden md:block">
+          <div class="flex space-x-6">
+            <a href="#home" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Home</a>
+            <a href="#about" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">About</a>
+            <a href="#experience" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Experience</a>
+            <a href="#projects" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Projects</a>
+            <a href="#skills" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Skills</a>
+            <a href="#certificates" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Certificates</a>
+            <a href="#contact" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Contact</a>
+          </div>
+        </div>
+        <div class="flex items-center ml-6">
+          <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-stone-600 dark:text-stone-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <i data-lucide="sun" class="hidden dark:block"></i>
+            <i data-lucide="moon" class="block dark:hidden"></i>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="w-full md:w-5/12 flex justify-center">
+          <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200 to-[#0D47A1] blur-lg opacity-20"></div>
+            <img
+              src="./image/axtn.jpg"
+              alt="My Lien"
+              class="rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg relative z-10 w-full h-full"
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-7/12 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-stone-900 dark:text-white">
+            Hello, I'm <span class="text-[#0D47A1] dark:text-gray-300">My Lien</span> 👋
+          </h1>
+          <h2 class="mt-4 text-2xl md:text-3xl font-medium text-stone-700 dark:text-stone-300">
+            Business Analyst
+          </h2>
+          <p class="mt-2 text-lg text-[#0D47A1] dark:text-gray-300 font-medium">
+            CRM | E-commerce | Digital Transformation
+          </p>
+          <p class="mt-4 text-stone-600 dark:text-stone-400 max-w-2xl">
+            I am a passionate Business Analyst with a strong foundation in Information Systems and experience in CRM
+            and ERP. I thrive on optimizing processes and driving digital transformation. My goal is to become a
+            Senior Business Analyst / Product Owner, leading technology projects that deliver real and sustainable
+            impact.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a
+              href="#contact"
+              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white rounded-full flex items-center gap-2 transition-colors"
+            >
+              <i data-lucide="contact"></i>
+              Contact Me
+            </a>
+            <a
+              href="https://github.com/mylientech"
+              class="px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white rounded-full flex items-center gap-2 transition-colors"
+            >
+              <i data-lucide="github"></i>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mylientech"
+              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white rounded-full flex items-center gap-2 transition-colors"
+            >
+              <i data-lucide="linkedin"></i>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">About Me</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-xl shadow-md">
+          <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6 flex items-center">
+            <i data-lucide="user" class="mr-2 text-[#0D47A1] dark:text-gray-300"></i>
+            Personal Information
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i data-lucide="calendar" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <div>
+                <span class="font-medium text-stone-700 dark:text-stone-300">Date of Birth:</span>
+                <span class="ml-2 text-stone-600 dark:text-stone-400">06/10/2002</span>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="user" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <div>
+                <span class="font-medium text-stone-700 dark:text-stone-300">Sex:</span>
+                <span class="ml-2 text-stone-600 dark:text-stone-400">Female</span>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="phone" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <div>
+                <span class="font-medium text-stone-700 dark:text-stone-300">Phone:</span>
+                <span class="ml-2 text-stone-600 dark:text-stone-400">0901998145</span>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="mail" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <div>
+                <span class="font-medium text-stone-700 dark:text-stone-300">Email:</span>
+                <span class="ml-2 text-stone-600 dark:text-stone-400">mylien@example.com</span>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="map-pin" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <div>
+                <span class="font-medium text-stone-700 dark:text-stone-300">Address:</span>
+                <span class="ml-2 text-stone-600 dark:text-stone-400">Go Vap District, Ho Chi Minh City</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-xl shadow-md">
+          <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6">Education</h3>
+          <div class="border-l-2 border-[#0D47A1] dark:border-gray-300 pl-6 py-2">
+            <h4 class="text-lg font-medium text-stone-800 dark:text-white">
+              Industrial University of Ho Chi Minh City
+            </h4>
+            <p class="text-[#0D47A1] dark:text-gray-300 mt-1">Faculty of Information Technology</p>
+            <p class="text-stone-600 dark:text-stone-400 mt-1">
+              Bachelor of Engineering in Information Systems
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Experience</span>
+      </h2>
+
+      <!-- Chia layout thành 2 cột lớn hơn -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Experience 1 - Business Analyst -->
+        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold text-stone-900 dark:text-white">Business Analyst</h3>
+            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-gray-300 font-medium">08/2024 - 02/2025</span>
+          </div>
+          <h4 class="text-lg font-medium text-stone-700 dark:text-stone-300 mb-2">
+            Citek ISD Joint Stock Company
+          </h4>
+          <p class="text-stone-700 dark:text-stone-300 mb-4 font-bold italic">
+            Analyze Customer Segmentation & Business Optimization (From Personal Project to Real-World Data
+            Analysis)
+          </p>
+          <ul class="space-y-3 text-stone-600 dark:text-stone-400">
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Assisted in researching and analyzing CRM systems to improve business processes.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Collected, cleaned, and analyzed raw data, applied the RFM model to segment customers.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Built Power BI dashboards to visualize insights, optimizing marketing and retention strategies.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Proposed data-driven solutions to enhance CLV and customer experience.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Documented requirements, collaborated with developers, and supported UAT testing.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience 2 - Support Marketing & Admissions -->
+        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold text-stone-900 dark:text-white">Support Marketing & Admissions</h3>
+            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-gray-300 font-medium">06/2023 - 12/2023</span>
+          </div>
+          <h4 class="text-lg font-medium text-stone-700 dark:text-stone-300 mb-2">
+            Tesla International School
+          </h4>
+          <p class="text-stone-700 dark:text-stone-300 mb-4 font-bold italic">
+            Marketing Campaigns & Student Enrollment Growth
+          </p>
+          <ul class="space-y-3 text-stone-600 dark:text-stone-400">
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Proposed and executed marketing campaigns to enhance brand awareness and attract students.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Provided admission counseling, contributing to increased enrollment conversion rates.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Assisted in organizing workshops and admission events to improve customer experience.
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              Captured photos and produced visual content to optimize multi-channel communications.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">My Projects</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700">
+          <div class="h-60 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end">
+              <div class="p-4 text-white">
+                <h4 class="font-medium">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="px-2 py-1 bg-amber-500/80 rounded-full text-xs">WordPress</span>
+                  <span class="px-2 py-1 bg-blue-500/80 rounded-full text-xs">PHP</span>
+                  <span class="px-2 py-1 bg-emerald-500/80 rounded-full text-xs">MySQL</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="https://placehold.co/600x400"
+              alt="E-commerce Website"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl font-medium text-stone-900 dark:text-white mb-2">E-commerce Website</h3>
+            <p class="text-stone-600 dark:text-stone-400 mb-4">
+              A fully functional online shopping platform built with WordPress.
+            </p>
+            <a
+              href="https://github.com/mylientech/ecommerce-project"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+            >
+              <i data-lucide="github" class="mr-2"></i>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700">
+          <div class="h-60 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end">
+              <div class="p-4 text-white">
+                <h4 class="font-medium">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="px-2 py-1 bg-blue-500/80 rounded-full text-xs">Power BI</span>
+                  <span class="px-2 py-1 bg-emerald-500/80 rounded-full text-xs">SQL</span>
+                  <span class="px-2 py-1 bg-purple-500/80 rounded-full text-xs">Excel</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="./image/segment.jpg"
+              alt="Analyze Customer Segments"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl font-medium text-stone-900 dark:text-white mb-2">Analyze Customer Segments</h3>
+            <p class="text-stone-600 dark:text-stone-400 mb-4">
+              A data-driven CRM dashboard for managing customer relationships.
+            </p>
+            <a
+              href="https://github.com/mylientech/Analyze_Customer_Segments_in_Europe"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+            >
+              <i data-lucide="github" class="mr-2"></i>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700">
+          <div class="h-60 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end">
+              <div class="p-4 text-white">
+                <h4 class="font-medium">Technologies Used:</h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="px-2 py-1 bg-amber-500/80 rounded-full text-xs">Zalo OA</span>
+                  <span class="px-2 py-1 bg-emerald-500/80 rounded-full text-xs">VietQR</span>
+                  <span class="px-2 py-1 bg-rose-500/80 rounded-full text-xs">API</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="./image/soms.jpg"
+              alt="Chay Xanh Restaurant Management"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl font-medium text-stone-900 dark:text-white mb-2">
+              Chay Xanh Restaurant Management
+            </h3>
+            <p class="text-stone-600 dark:text-stone-400 mb-4">
+              A business management system for the "Chay Xanh" restaurant chain.
+            </p>
+            <a
+              href="https://github.com/mylientech/SOMS_ChayXanh_ZaloOA_VietQR"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+            >
+              <i data-lucide="github" class="mr-2"></i>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section - Redesigned with Tech Stack Categories -->
+  <section
+    id="skills"
+    class="py-16 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
+  >
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-6">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">
+        Technical Skills
+        </span>
+      </h2>
+      <p class="text-center text-stone-600 dark:text-stone-400 max-w-3xl mx-auto mb-12">
+        As a Business Analyst, I leverage a diverse set of skills and technologies to bridge the gap between
+        business needs and technical solutions.
+      </p>
+
+      <!-- Tech Stack Categories -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Category 1: Business Analysis -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+
+            <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </span>
+              Business Analyst
+            </h3>
+
+            <ul class="space-y-2 text-stone-700 dark:text-stone-300">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Requirement Analysis
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Elicitation
+              </li>  
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Business Process Modeling
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Software Development Life Cycle
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Work Breakdown Structure (WBS)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Test case
+              </li>
+            </ul>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                BRD
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                SRS
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                UML
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                BPMN
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                User Story
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Flowchart
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Agile
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Scrum
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Waterfall
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Data Analyst -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+
+            <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </span>
+              Data Analyst
+            </h3>
+
+            <ul class="space-y-2 text-stone-700 dark:text-stone-300">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Data Visualization
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                SQL Querying
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Dashboard Creation
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Data Cleaning & Preparation
+              </li>
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                MySQL
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Power BI
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Excel
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                SQL Server
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Python
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Development & Design -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+
+            <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
+                </svg>
+              </span>
+              Development & UI/UX Design
+            </h3>
+            <ul class="space-y-2 text-stone-700 dark:text-stone-300">
+            <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                HTML/CSS, Bootstrap
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Sketch
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Wireframe
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                Mockup
+              </li>
+            </ul>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                HTML/CSS
+              </span>
+              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+                Figma
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools Icons Section -->
+      <div class="mt-12 mb-8">
+        <h3 class="text-2xl font-serif font-bold text-center text-stone-900 dark:text-white mb-6">
+          Tools 
+        </h3>
+
+        <div class="bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md">
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 justify-items-center">
+            <!-- Draw.io -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <img
+                src="./image/draw.io.png"
+                alt="drawio"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Draw.io</span>
+            </div>
+
+            <!-- Visio-->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-green-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-green-900/30 transition-shadow">
+              <img
+                src="./image/visio.png"
+                alt="visio"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Microsoft Visio</span>
+            </div>
+
+            <!-- Excel-->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <img
+                src="./image/excel.png"
+                alt="excel"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Excel</span>
+            </div>
+
+            <!-- Power BI -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <img
+                src="./image/BI.png"
+                alt="powerbi"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Power BI</span>
+            </div>
+
+            <!-- SQL-->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-orange-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-orange-200 dark:group-hover:shadow-orange-900/30 transition-shadow">
+              <img
+                src="./image/sql.jpg"
+                alt="sql"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Microsoft SQL Server</span>
+            </div>
+
+            <!-- GG Colab -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <img
+                src="./image/ggcolab.png"
+                alt="ggcolab"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Google Colab</span>
+            </div>
+
+            <!-- Figma -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <img
+                src="./image/figma.png"
+                alt="figma"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Figma</span>
+            </div>
+
+            <!-- Wordpress -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-purple-50 dark:bg-purple-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-purple-200 dark:group-hover:shadow-purple-900/30 transition-shadow">
+              <img
+                src="./image/wordpress.png"
+                alt="wordpress"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Wordpress</span>
+            </div>
+
+            <!-- GitHub -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-gray-50 dark:bg-gray-900/40 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-gray-200 dark:group-hover:shadow-gray-900/30 transition-shadow">
+              <img
+                src="./image/github.png"
+                alt="github"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">GitHub</span>
+            </div>
+
+            <!-- Odoo -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-green-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-green-900/30 transition-shadow">
+              <img
+                src="./image/odoo.jpg"
+                alt="odoo"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Odoo</span>
+            </div>
+
+            <!-- Jira -->
+            <div class="flex flex-col items-center group">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <img
+                src="./image/jira.png"
+                alt="drawio"
+                class="w-full h-auto rounded-lg"/>
+              </div>
+              <span class="text-xs font-medium text-stone-700 dark:text-stone-300">Jira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-serif font-bold text-center text-stone-900 dark:text-white mb-8">
+          Soft Skills
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+              <span class="text-2xl">💡</span>
+            </div>
+            <h4 class="font-medium text-stone-800 dark:text-white mb-1">Problem-Solving</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-sm">Identify pain points & propose optimal solutions</p>
+          </div>
+          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+              <span class="text-2xl">🤝</span>
+            </div>
+            <h4 class="font-medium text-stone-800 dark:text-white mb-1">Teamwork</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-sm">Collaborate across teams & drive project progress</p>
+          </div>
+          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+              <span class="text-2xl">⏳</span>
+            </div>
+            <h4 class="font-medium text-stone-800 dark:text-white mb-1">Time Management</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-sm">Prioritize tasks & meet deadlines</p>
+          </div>
+          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+              <span class="text-2xl">🗣</span>
+            </div>
+            <h4 class="font-medium text-stone-800 dark:text-white mb-1">Communication</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-sm">Present ideas clearly & engage stakeholders</p>
+          </div>
+          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+              <span class="text-2xl">🔍</span>
+            </div>
+            <h4 class="font-medium text-stone-800 dark:text-white mb-1">Logical Thinking</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-sm">Analyze data & develop effective solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Certificates</span>
+      </h2> 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <!-- Business Analyst Certification -->
+        <div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">IT Business Analyst Certificate</h3>
+          <p class="text-stone-600 dark:text-stone-300 mb-4">Approve by BeBA Academy</p>
+          <img
+            src="./image/cert.jpg"
+            alt="Business Analyst Certificate"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+        
+        <!-- TOEIC Certification -->
+        <div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">TOEIC Certification</h3>
+          <p class="text-stone-600 dark:text-stone-300 mb-4">Issued by ETS</p>
+          <img
+            src="./image/toeic.jpg"
+            alt="TOEIC Certificate"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Contact Me</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-md">
+          <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6">Get In Touch</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <i data-lucide="phone" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-medium text-stone-800 dark:text-white">Call Me</h4>
+                <p class="text-stone-600 dark:text-stone-400 mt-1">+84 901998145</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i data-lucide="mail" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-medium text-stone-800 dark:text-white">Email</h4>
+                <p class="text-stone-600 dark:text-stone-400 mt-1">mylien.tech@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i data-lucide="map-pin" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-medium text-stone-800 dark:text-white">Address</h4>
+                <p class="text-stone-600 dark:text-stone-400 mt-1">Go Vap District, Ho Chi Minh City</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-md">
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="message"
+                class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white font-medium rounded-lg transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="text-center md:text-left">
+          <p>&copy; 2025 My Lien. All Rights Reserved.</p>
+        </div>
+        <div class="flex justify-center space-x-6">
+          <a href="https://github.com/mylientech" class="text-white hover:text-blue-300 transition-colors">
+            <i data-lucide="github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mylientech"
+            class="text-white hover:text-blue-300 transition-colors"
+          >
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+        <div class="text-center md:text-right">
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#home" class="text-stone-300 hover:text-white transition-colors text-sm">Home</a>
+            <a href="#about" class="text-stone-300 hover:text-white transition-colors text-sm">About</a>
+            <a href="#projects" class="text-stone-300 hover:text-white transition-colors text-sm">Projects</a>
+            <a href="#contact" class="text-stone-300 hover:text-white transition-colors text-sm">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference or use the system preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
+    // Toggle theme when button is clicked
+    themeToggle.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
+
