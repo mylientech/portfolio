@@ -32,31 +32,47 @@
     .font-serif {
       font-family: 'Merriweather', serif;
     }
+    /* Smooth transition for theme switching */
+    * {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* Tech-inspired grid background for dark mode */
+    .dark .tech-grid-bg {
+      background-image: 
+        radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+        radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+    /* Subtle glow effect for dark mode */
+    .dark .tech-glow {
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+    }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+<body class="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-900 dark:tech-grid-bg">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="#home" class="text-xl font-serif font-bold text-[#0D47A1] dark:text-white">
+        <a href="#home" class="text-xl font-serif font-bold text-[#0D47A1] dark:text-cyan-400">
           My Lien
         </a>
         <div class="hidden md:block">
           <div class="flex space-x-6">
-            <a href="#home" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Home</a>
-            <a href="#about" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">About</a>
-            <a href="#experience" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Experience</a>
-            <a href="#projects" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Projects</a>
-            <a href="#skills" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Skills</a>
-            <a href="#certificates" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Certificates</a>
-            <a href="#contact" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-white px-2 py-1 text-sm font-medium transition-colors">Contact</a>
+            <a href="#home" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Home</a>
+            <a href="#about" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">About</a>
+            <a href="#experience" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Experience</a>
+            <a href="#projects" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Projects</a>
+            <a href="#skills" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Skills</a>
+            <a href="#certificates" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Certificates</a>
+            <a href="#contact" class="text-stone-600 hover:text-[#0D47A1] dark:text-stone-300 dark:hover:text-cyan-400 px-2 py-1 text-sm font-medium transition-colors">Contact</a>
           </div>
         </div>
         <div class="flex items-center ml-6">
-          <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-stone-600 dark:text-stone-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            <i data-lucide="sun" class="hidden dark:block"></i>
-            <i data-lucide="moon" class="block dark:hidden"></i>
+          <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-stone-600 dark:text-cyan-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 dark:tech-glow">
+            <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
+            <i data-lucide="moon" class="block dark:hidden w-5 h-5"></i>
             <span class="sr-only">Toggle theme</span>
           </button>
         </div>
@@ -65,27 +81,27 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+  <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 dark:bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="w-full md:w-5/12 flex justify-center">
           <div class="relative w-64 h-64 md:w-80 md:h-80">
-            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200 to-[#0D47A1] blur-lg opacity-20"></div>
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200 to-[#0D47A1] dark:from-cyan-500/30 dark:to-indigo-500/30 blur-lg opacity-20 dark:opacity-40"></div>
             <img
               src="./image/axtn.jpg"
               alt="My Lien"
-              class="rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg relative z-10 w-full h-full"
+              class="rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg dark:tech-glow relative z-10 w-full h-full"
             />
           </div>
         </div>
         <div class="w-full md:w-7/12 text-center md:text-left">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-stone-900 dark:text-white">
-            Hello, I'm <span class="text-[#0D47A1] dark:text-gray-300">My Lien</span> 👋
+            Hello, I'm <span class="text-[#0D47A1] dark:text-cyan-400">My Lien</span> 👋
           </h1>
           <h2 class="mt-4 text-2xl md:text-3xl font-medium text-stone-700 dark:text-stone-300">
             Business Analyst
           </h2>
-          <p class="mt-2 text-lg text-[#0D47A1] dark:text-gray-300 font-medium">
+          <p class="mt-2 text-lg text-[#0D47A1] dark:text-cyan-400 font-medium">
             CRM | E-commerce | Digital Transformation
           </p>
           <p class="mt-4 text-stone-600 dark:text-stone-400 max-w-2xl">
@@ -97,21 +113,21 @@
           <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
             <a
               href="#contact"
-              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white rounded-full flex items-center gap-2 transition-colors"
+              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 dark:bg-cyan-600 dark:hover:bg-cyan-700 text-white rounded-full flex items-center gap-2 transition-colors"
             >
               <i data-lucide="contact"></i>
               Contact Me
             </a>
             <a
               href="https://github.com/mylientech"
-              class="px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white rounded-full flex items-center gap-2 transition-colors"
+              class="px-6 py-3 bg-stone-900 hover:bg-stone-800 dark:bg-gray-800 dark:hover:bg-gray-700 text-white rounded-full flex items-center gap-2 transition-colors"
             >
               <i data-lucide="github"></i>
               GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/mylientech"
-              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white rounded-full flex items-center gap-2 transition-colors"
+              class="px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white rounded-full flex items-center gap-2 transition-colors"
             >
               <i data-lucide="linkedin"></i>
               LinkedIn
@@ -126,45 +142,45 @@
   <section id="about" class="py-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">About Me</span>
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">About Me</span>
       </h2>
       <div class="grid md:grid-cols-2 gap-12">
-        <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-xl shadow-md">
+        <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6 flex items-center">
-            <i data-lucide="user" class="mr-2 text-[#0D47A1] dark:text-gray-300"></i>
+            <i data-lucide="user" class="mr-2 text-[#0D47A1] dark:text-cyan-400"></i>
             Personal Information
           </h3>
           <ul class="space-y-4">
             <li class="flex items-start">
-              <i data-lucide="calendar" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <i data-lucide="calendar" class="mr-3 text-[#0D47A1] dark:text-cyan-400 mt-1 flex-shrink-0"></i>
               <div>
                 <span class="font-medium text-stone-700 dark:text-stone-300">Date of Birth:</span>
                 <span class="ml-2 text-stone-600 dark:text-stone-400">06/10/2002</span>
               </div>
             </li>
             <li class="flex items-start">
-              <i data-lucide="user" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <i data-lucide="user" class="mr-3 text-[#0D47A1] dark:text-cyan-400 mt-1 flex-shrink-0"></i>
               <div>
                 <span class="font-medium text-stone-700 dark:text-stone-300">Sex:</span>
                 <span class="ml-2 text-stone-600 dark:text-stone-400">Female</span>
               </div>
             </li>
             <li class="flex items-start">
-              <i data-lucide="phone" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <i data-lucide="phone" class="mr-3 text-[#0D47A1] dark:text-cyan-400 mt-1 flex-shrink-0"></i>
               <div>
                 <span class="font-medium text-stone-700 dark:text-stone-300">Phone:</span>
                 <span class="ml-2 text-stone-600 dark:text-stone-400">0901998145</span>
               </div>
             </li>
             <li class="flex items-start">
-              <i data-lucide="mail" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <i data-lucide="mail" class="mr-3 text-[#0D47A1] dark:text-cyan-400 mt-1 flex-shrink-0"></i>
               <div>
                 <span class="font-medium text-stone-700 dark:text-stone-300">Email:</span>
                 <span class="ml-2 text-stone-600 dark:text-stone-400">mylien@example.com</span>
               </div>
             </li>
             <li class="flex items-start">
-              <i data-lucide="map-pin" class="mr-3 text-[#0D47A1] dark:text-gray-300 mt-1 flex-shrink-0"></i>
+              <i data-lucide="map-pin" class="mr-3 text-[#0D47A1] dark:text-cyan-400 mt-1 flex-shrink-0"></i>
               <div>
                 <span class="font-medium text-stone-700 dark:text-stone-300">Address:</span>
                 <span class="ml-2 text-stone-600 dark:text-stone-400">Go Vap District, Ho Chi Minh City</span>
@@ -172,13 +188,13 @@
             </li>
           </ul>
         </div>
-        <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-xl shadow-md">
+        <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6">Education</h3>
-          <div class="border-l-2 border-[#0D47A1] dark:border-gray-300 pl-6 py-2">
+          <div class="border-l-2 border-[#0D47A1] dark:border-cyan-400 pl-6 py-2">
             <h4 class="text-lg font-medium text-stone-800 dark:text-white">
               Industrial University of Ho Chi Minh City
             </h4>
-            <p class="text-[#0D47A1] dark:text-gray-300 mt-1">Faculty of Information Technology</p>
+            <p class="text-[#0D47A1] dark:text-cyan-400 mt-1">Faculty of Information Technology</p>
             <p class="text-stone-600 dark:text-stone-400 mt-1">
               Bachelor of Engineering in Information Systems
             </p>
@@ -189,19 +205,19 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="py-16 bg-gray-100 dark:bg-gray-800">
+  <section id="experience" class="py-16 bg-gray-100 dark:bg-gray-900 dark:tech-grid-bg">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Experience</span>
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">Experience</span>
       </h2>
 
       <!-- Chia layout thành 2 cột lớn hơn -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <!-- Experience 1 - Business Analyst -->
-        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-lg">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
           <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
             <h3 class="text-xl font-semibold text-stone-900 dark:text-white">Business Analyst</h3>
-            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-gray-300 font-medium">08/2024 - 02/2025</span>
+            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-cyan-400 font-medium">08/2024 - 02/2025</span>
           </div>
           <h4 class="text-lg font-medium text-stone-700 dark:text-stone-300 mb-2">
             Citek ISD Joint Stock Company
@@ -212,33 +228,33 @@
           </p>
           <ul class="space-y-3 text-stone-600 dark:text-stone-400">
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Assisted in researching and analyzing CRM systems to improve business processes.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Collected, cleaned, and analyzed raw data, applied the RFM model to segment customers.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Built Power BI dashboards to visualize insights, optimizing marketing and retention strategies.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Proposed data-driven solutions to enhance CLV and customer experience.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Documented requirements, collaborated with developers, and supported UAT testing.
             </li>
           </ul>
         </div>
 
         <!-- Experience 2 - Support Marketing & Admissions -->
-        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-lg">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
           <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
             <h3 class="text-xl font-semibold text-stone-900 dark:text-white">Support Marketing & Admissions</h3>
-            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-gray-300 font-medium">06/2023 - 12/2023</span>
+            <span class="mt-2 md:mt-0 text-[#0D47A1] dark:text-cyan-400 font-medium">06/2023 - 12/2023</span>
           </div>
           <h4 class="text-lg font-medium text-stone-700 dark:text-stone-300 mb-2">
             Tesla International School
@@ -248,19 +264,19 @@
           </p>
           <ul class="space-y-3 text-stone-600 dark:text-stone-400">
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Proposed and executed marketing campaigns to enhance brand awareness and attract students.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Provided admission counseling, contributing to increased enrollment conversion rates.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Assisted in organizing workshops and admission events to improve customer experience.
             </li>
             <li class="flex items-start">
-              <span class="text-[#0D47A1] dark:text-gray-300 mr-2">•</span>
+              <span class="text-[#0D47A1] dark:text-cyan-400 mr-2">•</span>
               Captured photos and produced visual content to optimize multi-channel communications.
             </li>
           </ul>
@@ -273,7 +289,7 @@
   <section id="projects" class="py-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">My Projects</span>
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">My Projects</span>
       </h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -303,7 +319,7 @@
             </p>
             <a
               href="https://github.com/mylientech/ecommerce-project"
-              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors"
             >
               <i data-lucide="github" class="mr-2"></i>
               View on GitHub
@@ -337,7 +353,7 @@
             </p>
             <a
               href="https://github.com/mylientech/Analyze_Customer_Segments_in_Europe"
-              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors"
             >
               <i data-lucide="github" class="mr-2"></i>
               View on GitHub
@@ -373,7 +389,7 @@
             </p>
             <a
               href="https://github.com/mylientech/SOMS_ChayXanh_ZaloOA_VietQR"
-              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg transition-colors"
+              class="inline-flex items-center px-4 py-2 bg-stone-900 hover:bg-stone-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors"
             >
               <i data-lucide="github" class="mr-2"></i>
               View on GitHub
@@ -387,11 +403,11 @@
   <!-- Skills Section - Redesigned with Tech Stack Categories -->
   <section
     id="skills"
-    class="py-16 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    class="py-16 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-900 dark:tech-grid-bg"
   >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-6">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">
         Technical Skills
         </span>
       </h2>
@@ -404,15 +420,15 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <!-- Category 1: Business Analysis -->
         <div class="relative group">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
-          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 dark:from-cyan-500/10 dark:to-indigo-500/10 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-cyan-500/5 rounded-bl-full"></div>
 
             <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
-              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-cyan-500/20 rounded-full mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-cyan-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -430,57 +446,57 @@
 
             <ul class="space-y-2 text-stone-700 dark:text-stone-300">
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Requirement Analysis
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Elicitation
               </li>  
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Business Process Modeling
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Software Development Life Cycle
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Work Breakdown Structure (WBS)
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-cyan-400 rounded-full mr-2"></span>
                 Test case
               </li>
             </ul>
 
             <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 BRD
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 SRS
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 UML
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 BPMN
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 User Story
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 Flowchart
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 Agile
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 Scrum
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-cyan-900/30 text-[#0D47A1] dark:text-cyan-400 rounded-full text-xs font-medium">
                 Waterfall
               </span>
             </div>
@@ -489,15 +505,15 @@
 
         <!-- Category 2: Data Analyst -->
         <div class="relative group">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
-          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 dark:from-indigo-500/10 dark:to-purple-500/10 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-indigo-500/5 rounded-bl-full"></div>
 
             <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
-              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-indigo-500/20 rounded-full mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-indigo-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -515,36 +531,36 @@
 
             <ul class="space-y-2 text-stone-700 dark:text-stone-300">
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-indigo-400 rounded-full mr-2"></span>
                 Data Visualization
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-indigo-400 rounded-full mr-2"></span>
                 SQL Querying
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-indigo-400 rounded-full mr-2"></span>
                 Dashboard Creation
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-indigo-400 rounded-full mr-2"></span>
                 Data Cleaning & Preparation
               </li>
             </ul>
             <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-indigo-900/30 text-[#0D47A1] dark:text-indigo-400 rounded-full text-xs font-medium">
                 MySQL
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-indigo-900/30 text-[#0D47A1] dark:text-indigo-400 rounded-full text-xs font-medium">
                 Power BI
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-indigo-900/30 text-[#0D47A1] dark:text-indigo-400 rounded-full text-xs font-medium">
                 Excel
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-indigo-900/30 text-[#0D47A1] dark:text-indigo-400 rounded-full text-xs font-medium">
                 SQL Server
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-indigo-900/30 text-[#0D47A1] dark:text-indigo-400 rounded-full text-xs font-medium">
                 Python
               </span>
             </div>
@@ -553,15 +569,15 @@
 
         <!-- Category 3: Development & Design -->
         <div class="relative group">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
-          <div class="relative bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-blue-500/5 rounded-bl-full"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0D47A1]/20 to-blue-600/20 dark:from-purple-500/10 dark:to-teal-500/10 rounded-xl blur-xl group-hover:blur-lg transition-all duration-300"></div>
+          <div class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md overflow-hidden z-10 h-full">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#0D47A1]/10 dark:bg-purple-500/5 rounded-bl-full"></div>
 
             <h3 class="text-xl font-bold text-stone-900 dark:text-white mb-4 flex items-center">
-              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-blue-500/20 rounded-full mr-3">
+              <span class="flex items-center justify-center w-10 h-10 bg-[#0D47A1]/10 dark:bg-purple-500/20 rounded-full mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-[#0D47A1] dark:text-gray-300"
+                  class="h-5 w-5 text-[#0D47A1] dark:text-purple-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -578,28 +594,28 @@
             </h3>
             <ul class="space-y-2 text-stone-700 dark:text-stone-300">
             <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-purple-400 rounded-full mr-2"></span>
                 HTML/CSS, Bootstrap
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-purple-400 rounded-full mr-2"></span>
                 Sketch
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-purple-400 rounded-full mr-2"></span>
                 Wireframe
               </li>
               <li class="flex items-center">
-                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-gray-300 rounded-full mr-2"></span>
+                <span class="w-2 h-2 bg-[#0D47A1] dark:bg-purple-400 rounded-full mr-2"></span>
                 Mockup
               </li>
             </ul>
 
             <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-purple-900/30 text-[#0D47A1] dark:text-purple-400 rounded-full text-xs font-medium">
                 HTML/CSS
               </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-[#0D47A1]/30 text-[#0D47A1] dark:text-gray-300 rounded-full text-xs font-medium">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-purple-900/30 text-[#0D47A1] dark:text-purple-400 rounded-full text-xs font-medium">
                 Figma
               </span>
             </div>
@@ -613,11 +629,11 @@
           Tools 
         </h3>
 
-        <div class="bg-white dark:bg-blue-900 p-6 rounded-xl shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
           <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 justify-items-center">
             <!-- Draw.io -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-cyan-900/30 transition-shadow">
               <img
                 src="./image/draw.io.png"
                 alt="drawio"
@@ -628,7 +644,7 @@
 
             <!-- Visio-->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-green-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-green-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-teal-900/30 transition-shadow">
               <img
                 src="./image/visio.png"
                 alt="visio"
@@ -639,7 +655,7 @@
 
             <!-- Excel-->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-amber-900/30 transition-shadow">
               <img
                 src="./image/excel.png"
                 alt="excel"
@@ -650,7 +666,7 @@
 
             <!-- Power BI -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-amber-900/30 transition-shadow">
               <img
                 src="./image/BI.png"
                 alt="powerbi"
@@ -661,7 +677,7 @@
 
             <!-- SQL-->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-orange-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-orange-200 dark:group-hover:shadow-orange-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-orange-200 dark:group-hover:shadow-orange-900/30 transition-shadow">
               <img
                 src="./image/sql.jpg"
                 alt="sql"
@@ -672,7 +688,7 @@
 
             <!-- GG Colab -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-cyan-900/30 transition-shadow">
               <img
                 src="./image/ggcolab.png"
                 alt="ggcolab"
@@ -683,7 +699,7 @@
 
             <!-- Figma -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-yellow-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-yellow-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-yellow-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-yellow-200 dark:group-hover:shadow-amber-900/30 transition-shadow">
               <img
                 src="./image/figma.png"
                 alt="figma"
@@ -694,7 +710,7 @@
 
             <!-- Wordpress -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-purple-50 dark:bg-purple-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-purple-200 dark:group-hover:shadow-purple-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-purple-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-purple-200 dark:group-hover:shadow-purple-900/30 transition-shadow">
               <img
                 src="./image/wordpress.png"
                 alt="wordpress"
@@ -705,7 +721,7 @@
 
             <!-- GitHub -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-gray-50 dark:bg-gray-900/40 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-gray-200 dark:group-hover:shadow-gray-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-gray-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-gray-200 dark:group-hover:shadow-gray-900/30 transition-shadow">
               <img
                 src="./image/github.png"
                 alt="github"
@@ -716,7 +732,7 @@
 
             <!-- Odoo -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-green-900/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-green-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-green-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-green-200 dark:group-hover:shadow-teal-900/30 transition-shadow">
               <img
                 src="./image/odoo.jpg"
                 alt="odoo"
@@ -727,7 +743,7 @@
 
             <!-- Jira -->
             <div class="flex flex-col items-center group">
-              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-blue-900/30 transition-shadow">
+              <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-gray-700 rounded-full mb-2 group-hover:shadow-md group-hover:shadow-blue-200 dark:group-hover:shadow-cyan-900/30 transition-shadow">
               <img
                 src="./image/jira.png"
                 alt="drawio"
@@ -746,36 +762,36 @@
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-gray-700 rounded-full flex items-center justify-center mb-3">
               <span class="text-2xl">💡</span>
             </div>
             <h4 class="font-medium text-stone-800 dark:text-white mb-1">Problem-Solving</h4>
             <p class="text-stone-600 dark:text-stone-400 text-sm">Identify pain points & propose optimal solutions</p>
           </div>
-          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-gray-700 rounded-full flex items-center justify-center mb-3">
               <span class="text-2xl">🤝</span>
             </div>
             <h4 class="font-medium text-stone-800 dark:text-white mb-1">Teamwork</h4>
             <p class="text-stone-600 dark:text-stone-400 text-sm">Collaborate across teams & drive project progress</p>
           </div>
-          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-gray-700 rounded-full flex items-center justify-center mb-3">
               <span class="text-2xl">⏳</span>
             </div>
             <h4 class="font-medium text-stone-800 dark:text-white mb-1">Time Management</h4>
             <p class="text-stone-600 dark:text-stone-400 text-sm">Prioritize tasks & meet deadlines</p>
           </div>
-          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-gray-700 rounded-full flex items-center justify-center mb-3">
               <span class="text-2xl">🗣</span>
             </div>
             <h4 class="font-medium text-stone-800 dark:text-white mb-1">Communication</h4>
             <p class="text-stone-600 dark:text-stone-400 text-sm">Present ideas clearly & engage stakeholders</p>
           </div>
-          <div class="bg-white dark:bg-blue-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
-            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-[#0D47A1]/20 rounded-full flex items-center justify-center mb-3">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-50 dark:bg-gray-700 rounded-full flex items-center justify-center mb-3">
               <span class="text-2xl">🔍</span>
             </div>
             <h4 class="font-medium text-stone-800 dark:text-white mb-1">Logical Thinking</h4>
@@ -790,11 +806,11 @@
   <section id="certificates" class="py-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Certificates</span>
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">Certificates</span>
       </h2> 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <!-- Business Analyst Certification -->
-        <div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-xl shadow-lg">
+        <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
           <h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">IT Business Analyst Certificate</h3>
           <p class="text-stone-600 dark:text-stone-300 mb-4">Approve by BeBA Academy</p>
           <img
@@ -805,7 +821,7 @@
         </div>
         
         <!-- TOEIC Certification -->
-        <div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-xl shadow-lg">
+        <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
           <h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">TOEIC Certification</h3>
           <p class="text-stone-600 dark:text-stone-300 mb-4">Issued by ETS</p>
           <img
@@ -819,31 +835,31 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-800">
+  <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-900 dark:tech-grid-bg">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-gray-300 pb-2">Contact Me</span>
+        <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">Contact Me</span>
       </h2>
       <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-6">Get In Touch</h3>
           <div class="space-y-6">
             <div class="flex items-start">
-              <i data-lucide="phone" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <i data-lucide="phone" class="text-[#0D47A1] dark:text-cyan-400 mr-4 mt-1"></i>
               <div>
                 <h4 class="font-medium text-stone-800 dark:text-white">Call Me</h4>
                 <p class="text-stone-600 dark:text-stone-400 mt-1">+84 901998145</p>
               </div>
             </div>
             <div class="flex items-start">
-              <i data-lucide="mail" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <i data-lucide="mail" class="text-[#0D47A1] dark:text-cyan-400 mr-4 mt-1"></i>
               <div>
                 <h4 class="font-medium text-stone-800 dark:text-white">Email</h4>
                 <p class="text-stone-600 dark:text-stone-400 mt-1">mylien.tech@gmail.com</p>
               </div>
             </div>
             <div class="flex items-start">
-              <i data-lucide="map-pin" class="text-[#0D47A1] dark:text-gray-300 mr-4 mt-1"></i>
+              <i data-lucide="map-pin" class="text-[#0D47A1] dark:text-cyan-400 mr-4 mt-1"></i>
               <div>
                 <h4 class="font-medium text-stone-800 dark:text-white">Address</h4>
                 <p class="text-stone-600 dark:text-stone-400 mt-1">Go Vap District, Ho Chi Minh City</p>
@@ -851,7 +867,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white dark:bg-blue-900 p-8 rounded-xl shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <form>
             <div class="mb-4">
               <label for="name" class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1">
@@ -860,7 +876,7 @@
               <input
                 type="text"
                 id="name"
-                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] dark:focus:ring-cyan-400 focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
                 required
               />
             </div>
@@ -871,7 +887,7 @@
               <input
                 type="email"
                 id="email"
-                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] dark:focus:ring-cyan-400 focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
                 required
               />
             </div>
@@ -885,13 +901,13 @@
               <textarea
                 id="message"
                 rows="4"
-                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
+                class="w-full px-4 py-2 border border-stone-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#0D47A1] dark:focus:ring-cyan-400 focus:border-transparent bg-white dark:bg-gray-700 text-stone-900 dark:text-white"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              class="w-full px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 text-white font-medium rounded-lg transition-colors"
+              class="w-full px-6 py-3 bg-[#0D47A1] hover:bg-blue-800 dark:bg-cyan-600 dark:hover:bg-cyan-700 text-white font-medium rounded-lg transition-colors"
             >
               Send Message
             </button>
@@ -909,22 +925,22 @@
           <p>&copy; 2025 My Lien. All Rights Reserved.</p>
         </div>
         <div class="flex justify-center space-x-6">
-          <a href="https://github.com/mylientech" class="text-white hover:text-blue-300 transition-colors">
+          <a href="https://github.com/mylientech" class="text-white hover:text-cyan-400 transition-colors">
             <i data-lucide="github"></i>
           </a>
           <a
             href="https://www.linkedin.com/in/mylientech"
-            class="text-white hover:text-blue-300 transition-colors"
+            class="text-white hover:text-cyan-400 transition-colors"
           >
             <i data-lucide="linkedin"></i>
           </a>
         </div>
         <div class="text-center md:text-right">
           <div class="flex justify-center md:justify-end space-x-4">
-            <a href="#home" class="text-stone-300 hover:text-white transition-colors text-sm">Home</a>
-            <a href="#about" class="text-stone-300 hover:text-white transition-colors text-sm">About</a>
-            <a href="#projects" class="text-stone-300 hover:text-white transition-colors text-sm">Projects</a>
-            <a href="#contact" class="text-stone-300 hover:text-white transition-colors text-sm">Contact</a>
+            <a href="#home" class="text-stone-300 hover:text-cyan-400 transition-colors text-sm">Home</a>
+            <a href="#about" class="text-stone-300 hover:text-cyan-400 transition-colors text-sm">About</a>
+            <a href="#projects" class="text-stone-300 hover:text-cyan-400 transition-colors text-sm">Projects</a>
+            <a href="#contact" class="text-stone-300 hover:text-cyan-400 transition-colors text-sm">Contact</a>
           </div>
         </div>
       </div>
