@@ -834,7 +834,7 @@
 <section id="certificates" class="py-16 bg-white dark:bg-gray-900">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-12">
-      <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">Certificates</span>
+      <span class="inline-block border-b-2 border-[#0D47A1] dark:border-cyan-400 pb-2">Certificates & Achievements</span>
     </h2> 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
       
@@ -859,58 +859,93 @@
           class="w-full h-auto rounded-lg"
         />
       </div>
+
+      <div class="bg-blue-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+        <h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">Five Good Students</h3>
+        <p class="text-stone-600 dark:text-stone-300 mb-4">Awarded by the Rector of the Industrial University of Ho Chi Minh City</p>
+        <img
+          src="./image/sv5t.jpg"
+          alt="HFive Good Students"
+          class="w-full h-auto rounded-lg"
+        />
+      </div>
     </div>
   </div>
 </section>
 
 <!--CTV-->
-<div class="w-full">
-  <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-4 flex items-center">
-    <i data-lucide="users" class="mr-2 text-[#0D47A1] dark:text-cyan-400"></i>
-    Collaborator & Event Volunteer
-  </h3>
-  <div class="flex flex-col md:flex-row gap-8 items-start">
-    <!-- Left: Blockquote -->
-    <div class="w-full md:w-1/2">
-      <blockquote class="italic text-stone-600 dark:text-stone-400 border-l-4 border-[#0D47A1] dark:border-cyan-400 pl-4 py-2">
+<section id="activities" class="py-16 bg-white dark:bg-gray-900 dark:tech-grid-bg">
+  <div class="w-full max-w-6xl mx-auto px-4">
+    <!-- Title -->
+    <h3 class="text-xl font-serif font-bold text-stone-900 dark:text-white mb-4 text-center flex justify-center items-center">
+      <i data-lucide="users" class="mr-2 text-[#0D47A1] dark:text-cyan-400"></i>
+      Collaborator & Event Volunteer
+    </h3>
+
+    <!-- Quote center -->
+    <div class="w-full mb-10">
+      <blockquote class="italic text-center text-stone-600 dark:text-stone-400 border-l-4 border-[#0D47A1] dark:border-cyan-400 pl-4 py-2 max-w-3xl mx-auto">
         "Besides studying and improving my knowledge, I also actively participate in various activities and events to enhance my communication skills and build meaningful relationships. Additionally, these experiences help me develop skills in organizing and managing tasks effectively."
       </blockquote>
     </div>
-  
-    <!-- Right: Images with captions -->
-    <div class="w-full md:w-1/2">
-      <div class="grid grid-cols-2 gap-4">
-        <!-- Image 1 -->
-        <div class="overflow-hidden rounded-lg shadow-md">
-          <img 
-            src="./image/khaigiang.jpg" 
-            alt="Activity 1" 
-            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-          />
-          <p class="mt-2 text-sm text-center text-stone-700 dark:text-stone-300">
-            <strong>Event collaborator</strong> – Movement Committee, <strong>Opening ceremony of Ho Chi Minh City University of Industry</strong>
-          </p>
-        </div>
-  
-        <!-- Image 2 -->
-        <div class="overflow-hidden rounded-lg shadow-md">
-          <img 
-            src="./image/workshop.jpg" 
-            alt="Activity 2" 
-            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-          />
-          <p class="mt-2 text-sm text-center text-stone-700 dark:text-stone-300">
-            <strong>Event Collaborator</strong> – Workshop on Blockchain, Web3, Metaverse, and NFTs – <strong>Young Scientist Conference at Ho Chi Minh City University of Industry.</strong>
-          </p>            
-        </div>
+
+    <!-- Images Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Image 1 -->
+      <div class="flex flex-col items-center text-center overflow-hidden rounded-lg shadow-md">
+        <img 
+          src="./image/khaigiang.jpg" 
+          alt="Activity 1" 
+          class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        />
+        <p class="mt-2 text-sm text-stone-700 dark:text-stone-300 px-2">
+          <strong>Event collaborator</strong> – Movement Committee, <strong>Opening ceremony of Ho Chi Minh City University of Industry</strong>
+        </p>
       </div>
+
+      <!-- Image 2 -->
+      <div class="flex flex-col items-center text-center overflow-hidden rounded-lg shadow-md">
+        <img 
+          src="./image/workshop.jpg" 
+          alt="Activity 2" 
+          class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        />
+        <p class="mt-2 text-sm text-stone-700 dark:text-stone-300 px-2">
+          <strong>Event Collaborator</strong> – Workshop on Blockchain, Web3, Metaverse, and NFTs – <strong>Young Scientist Conference at Ho Chi Minh City University of Industry.</strong>
+        </p>
+      </div>
+
+      <!-- Image 3 (duplicate for example) -->
+      <div class="flex flex-col items-center text-center overflow-hidden rounded-lg shadow-md">
+        <img 
+          src="./image/xtn.jpg" 
+          alt="Activity 3" 
+          class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        />
+        <p class="mt-2 text-sm text-stone-700 dark:text-stone-300 px-2">
+          <strong>Volunteer - Spring Volunteer Campaign 2024</strong> – Ho Chi Minh City University of Industry, January 2024
+        </p>
+      </div>
+
+      <!-- Image 3 (duplicate for example) -->
+      <div class="flex flex-col items-center text-center overflow-hidden rounded-lg shadow-md">
+        <img 
+          src="./image/tuthien.jpg" 
+          alt="Activity 4" 
+          class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        />
+        <p class="mt-2 text-sm text-stone-700 dark:text-stone-300 px-2">
+          <strong>Volunteer- Tu Hanh Pagoda </strong> - Donated old clothes, snacks, and books to the children
+        </p>
+      </div>
+
+      <!-- Add more images here if you want 6 in total -->
     </div>
   </div>
-</div>
-
+</section>
 
     <!-- Thank You Section -->
-<section id="activities" class="py-16 bg-white dark:bg-gray-900 dark:tech-grid-bg">
+<section id="" class="py-16 bg-white dark:bg-gray-900 dark:tech-grid-bg">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-serif font-bold text-center text-stone-900 dark:text-white mb-8">
